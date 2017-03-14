@@ -12,14 +12,15 @@ public class Review {
 	private String description;
 	
 	
-	public Review(Long id,String title, String imgURL, String reviewCategory, String synopsis, String description){
+	public Review(Long id,String title, String imgURL, String reviewCategory, String description, String synopsis ){
 		// this.id=id;  etc  remove from others?
 		this.id=id;
 		this.title = title;
 		this.imgURL= imgURL;
 		this.reviewCategory = reviewCategory;
-		this.synopsis = synopsis;
 		this.description = description;
+		this.synopsis = synopsis;
+		
 		
 		
 	}
@@ -42,25 +43,25 @@ public class Review {
 	public String getImgURL(){
 		
 		
-		return imgURL ;
+		return imgURL;
 	}
 	
 	public String getReviewCategory(){
 		
-		return reviewCategory ;
+		return reviewCategory;
 		
 	}
 	
 
 	public String getSynopsis(){
 		
-		return synopsis  ;
+		return synopsis;
 		
 	}
 
 	public String getDescription(){
 	
-		return description  ;
+		return description;
 		
 	} 
 }

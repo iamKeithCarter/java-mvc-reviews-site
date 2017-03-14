@@ -1,12 +1,29 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Photo Review</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
 </head>
 <body>
-    <p th:text="'a multiple review based on id, ' + ${repository.title} + '!'" /> 
-    
- 
+
+<header><h1> Photo Reviews</h1></header>
+<div class = "introbox">
+<h3>Select a review to read it</h3>
+
+     
+     <div class = "row">
+     	<div><h2 th:text="${repository.title}"></h2></div>
+     	<div><p th:text="${repository.synopsis}"></p></div>
+		<div><p th:text="${repository.reviewCategory}"></p></div>
+		<div><img th:src="${repository.imgURL}" /></div>
+		
+
+		  
+		</div>
+  
+ </div>
 </body>
 </html>
+
+   

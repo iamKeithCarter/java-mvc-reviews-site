@@ -37,9 +37,8 @@ public class ReviewController {
 
 	@RequestMapping("/reviews")
 	public String reviews(Model model){
-	
-		model.addAttribute("repository", repository.getAll());
-		return "reviews";
+	model.addAttribute("repository", repository.getAll());
+	return "reviews";
 	}
 	//interate throuh them to display
 	
