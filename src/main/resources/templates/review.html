@@ -1,28 +1,28 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Photo Review</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    
+	<title>Photo Review</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" media="all"  
+	href="../../css/review-css.css" th:href="@{/css/review-css.css}" />
+
 </head>
 <body>
 
-<header><h1> Photo Reviews</h1></header>
-<div class = "introbox">
-<h3>Select a review to read it</h3>
+	<header><h1> Photo Review</h1></header>
 
-     
-     <div class = "row">
-     	<div><h2 th:text="${repository.title}"></h2></div>
-     	<div><p th:text="${repository.synopsis}"></p></div>
-		<div><p th:text="${repository.reviewCategory}"></p></div>
+	<div class = "row">
+	<h3></h3>
+		<div><h1 th:text="${repository.title}"></h1></div>
+		<div><h3 th:text="${repository.reviewCategory}"></h3></div>
+		<div><p th:text="${repository.synopsis}"></p></div>
 		<div><img th:src="${repository.imgURL}" /></div>
 		
 
-		  
-		</div>
-  
- </div>
+
+	</div>
+
+
 </body>
 </html>
 

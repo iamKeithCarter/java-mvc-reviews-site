@@ -1,26 +1,25 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Photo Review</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    
-</head>
-<body>
+  <title>Photo Review</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" media="all"  
+  href="../../css/review-css.css" th:href="@{/css/review-css.css}" /></head>
+  <body>
 
-<header><h1> Photo Reviews</h1></header>
-<div class = "introbox">
-<h3>Select an image or Title to read a detailed review</h3>
+    <header><h1> Grey World - Photo Reviews</h1></header>
+    <div class = "introbox">
+      <h3>Select an image or Title to read a detailed review</h3>
 
-     <tr th:each="repo : ${repository}">
-     <div class = "row">
-     	<a th:href="@{/review?(id=${repo.id})}"><td th:text="${repo.title}"></td></a>
-     	<td th:text="${repo.description}"></td>
-		<td><a th:href="@{/review?(id=${repo.id})}"><img th:src="${repo.imgURL}" style="width:200px;height:100px" /></a>
-</td>
-		</div>
-   </tr>
- </div>
+      <div th:each="repo : ${repository}">
+       <div class = "row">
+        <div><a th:href="@{/review?(id=${repo.id})}"><h3 th:text="${repo.title}"></h3></a></div>
+        <div><p th:text="${repo.description}"></p></div>
+        <div><a th:href="@{/review?(id=${repo.id})}"><img th:src="${repo.imgURL}" style="width:260px;height:130px" /></a></div>
+
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 
-   
