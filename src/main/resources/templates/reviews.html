@@ -8,13 +8,13 @@
   <body>
 
     <header><h1> Grey World - Photo Reviews</h1></header>
-    <div class = "introbox">
+    <div class="introbox">this should be blue with a border
       <h3>Select an image or Title to read a detailed review</h3>
 
       <div th:each="repo : ${repository}">
        <div class = "row">
         <div><a th:href="@{/review?(id=${repo.id})}"><h3 th:text="${repo.title}"></h3></a></div>
-        <div><p th:text="${repo.description}"></p></div>
+        <div><p th:text="${repo.synopsis}"></p></div>
         <div><a th:href="@{/review?(id=${repo.id})}"><img th:src="${repo.imgURL}" style="width:260px;height:130px" /></a></div>
 
       </div>
