@@ -7,11 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @Controller
 public class ReviewController {
 
-	
 	@Resource
 	public ReviewRepository repositoryOfReviews;
 
@@ -24,7 +22,7 @@ public class ReviewController {
 	@RequestMapping("/review")
 	public String review(@RequestParam("id") Long id, Model model) {
 		model.addAttribute("repositoryOfReviews", repositoryOfReviews.findOne(id));
-	
+
 		return "review";
 	}
 
