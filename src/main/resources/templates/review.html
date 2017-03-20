@@ -14,11 +14,12 @@
 	<div class = "row">
 		<h3></h3>
 		<div><h1 th:text="${repositoryOfReviews.title}"></h1></div>
-		<div><h3 th:text="${repositoryOfReviews.categoryTitle}"></h3></div>
+		<!-- <div><h3 th:text="${repositoryOfReviews.categoryTitle}"></h3></div> old method of getting the category name -->
+			<div><h3 th:text="${repositoryOfReviews.category.title}"></h3></div><!-- new method of getting the category name -->
 		<div><p th:text="${repositoryOfReviews.synopsis}"></p></div>
 		<div><img th:src="${repositoryOfReviews.imgURL}" /></div>
 		<div><img th:text="${repositoryOfReviews.description}" /></div>
-		<br/>
+		
 
 
 	</div>

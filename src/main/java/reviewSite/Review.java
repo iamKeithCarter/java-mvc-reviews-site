@@ -18,7 +18,7 @@ public class Review {
 
 	private String synopsis;
 	private String description;
-	private String categoryTitle;
+	//private String categoryTitle;
 
 	@ManyToOne
 	private Category category;
@@ -60,10 +60,10 @@ public class Review {
 
 	}
 
-	public String getCategoryTitle() {
-		categoryTitle = category.getTitle();
-		return categoryTitle;
-	}
+//	public String getCategoryTitle() {
+//		categoryTitle = category.getTitle();
+//		return categoryTitle;
+//	}
 
 	public String getSynopsis() {
 

@@ -24,7 +24,7 @@ public class Category {
 
 	}
 
-	public Category(String title) {
+	public Category(String title) { 
 		this(title, Collections.emptyList());
 	}
 
