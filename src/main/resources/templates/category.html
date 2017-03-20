@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Photo Review Categories</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" media="all"  
+	href="../../css/review-css.css" th:href="@{/css/review-css.css}" />
+
+</head>
+<body>
+
+	<header><h1 th:text="${repositoryOfCategories.title}"></h1></header>
+
+	<div class = "row">
+		
+		<div th:each="aSingleReview : ${repositoryOfCategories.reviews}">
+
+			<div><a th:href="@{/review?(id=${aSingleReview.id})}"><h3 th:text="${aSingleReview.title}"></h3></a></div>
+			
+			
+
+		</div>
+
+		<br/>
+	</div>
+</body>
+</html>

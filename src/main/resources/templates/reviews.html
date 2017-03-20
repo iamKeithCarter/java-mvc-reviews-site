@@ -1,25 +1,27 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <title>Photo Review</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" media="all"  
-  href="../../css/review-css.css" th:href="@{/css/review-css.css}" /></head>
-  <body>
+  <!DOCTYPE HTML>
+  <html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Photo Review</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all"  
+    href="../../css/review-css.css" th:href="@{/css/review-css.css}" /></head>
+    <body>
 
-    <header><h1> Grey World - Photo Reviews</h1></header>
-    <div class="introbox">this should be blue with a border
-      <h3>Select an image or Title to read a detailed review</h3>
+      <header><h1> Grey World - Photo Reviews</h1></header>
+      
+      <div>
+        <h3>Select an image or Title to read a detailed review</h3>
 
-      <div th:each="repo : ${repository}">
-       <div class = "row">
-        <div><a th:href="@{/review?(id=${repo.id})}"><h3 th:text="${repo.title}"></h3></a></div>
-        <div><p th:text="${repo.synopsis}"></p></div>
-        <div><a th:href="@{/review?(id=${repo.id})}"><img th:src="${repo.imgURL}" style="width:260px;height:130px" /></a></div>
+        <div th:each="aSingleReview : ${repositoryOfReviews}">
+         <div class = "row">
+          <div><a th:href="@{/review?(id=${aSingleReview.id})}"><h3 th:text="${aSingleReview.title}"></h3></a></div>
+          <div><p th:text="${aSingleReview.synopsis}"></p></div>
+          <div><a th:href="@{/review?(id=${aSingleReview.id})}"><img th:src="${aSingleReview.imgURL}" style="width:260px;height:130px" /></a></div>
 
+        </div>
       </div>
     </div>
-  </div>
-</body>
-</html>
+    
+  </body>
+  </html>
 

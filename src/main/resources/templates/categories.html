@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Photo Review Categories</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" media="all"  
+	href="../../css/review-css.css" th:href="@{/css/review-css.css}" />
+
+</head>
+<body>
+
+	<header><h1> Grey World Photo Categories</h1></header>
+
+	<div class = "row">
+		<h3></h3>
+		
+		<div th:each="aSingleCategory : ${repositoryOfCategories}">
+			
+			<div><a th:href="@{/category?(id=${aSingleCategory.id})}"><h3 th:text="${aSingleCategory.title}"></h3></a></div>
+			<br/>
+		</div>
+	</div>
+</body>
+</html>

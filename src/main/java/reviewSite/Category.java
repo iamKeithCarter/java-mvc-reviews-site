@@ -4,6 +4,7 @@ package reviewSite;
 
 
 import java.util.Collection;
+import java.util.Collections;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,17 +16,22 @@ import javax.persistence.OneToMany;
 @Entity
 public class Category {
 	
+	
 	@Id
 	@GeneratedValue
 	public long id;
-	public String title;
+	private String title;
 	
 	
 	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
-	private Collection<Review> reviews;
+	protected Collection<Review> reviews;
 
-	private Category(){
+	protected Category(){
 		
+	}
+	
+	public Category(String title){
+		this(title, Collections.emptyList());
 	}
 	
 	public Category(String title, Collection<Review> reviews){
@@ -34,8 +40,8 @@ public class Category {
 		this.reviews = reviews;
 	}
 	
-	public Collection<Review> getReview() {
-
+	public Collection<Review> getReviews() {
+		 
 		return reviews;
 
 	}
@@ -43,7 +49,6 @@ public class Category {
 	public String getTitle() {
 
 		return title;
-
 	}
 	public Long getId(){
 		return id;
